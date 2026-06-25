@@ -1,0 +1,194 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background-color: rgba(8, 9, 10, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brandContainer {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logoImage {
+  height: 38px;
+  width: auto;
+}
+
+.logoText {
+  font-size: 1.15rem;
+  font-weight: 850;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.scrollArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Custom Scrollbar for Sidebar */
+.scrollArea::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollArea::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 750;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-right: 12px;
+  margin-bottom: 4px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.itemLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 16px;
+  color: #94a3b8;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.925rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  border-right: 3px solid transparent;
+}
+
+.itemLink:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-right-color: rgba(255, 255, 255, 0.15);
+}
+
+.active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, var(--primary) 0%, #b80710 100%) !important;
+  box-shadow: 0 6px 16px rgba(229, 9, 20, 0.35);
+  border-right-color: transparent !important;
+}
+
+.active:hover {
+  background: linear-gradient(135deg, var(--primary) 0%, #b80710 100%) !important;
+  border-right-color: transparent !important;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.itemLink:hover .icon {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebarFooter {
+  padding: 24px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background-color: #060708;
+}
+
+.downloadApps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.downloadApps p {
+  font-size: 0.75rem;
+  color: #737373;
+  font-weight: 600;
+}
+
+.appBadgeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.appBadge {
+  background-color: #121316;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 6px 4px;
+  font-size: 0.7rem;
+  color: #a3a3a3;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.appBadge:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+/* Hide sidebar on screens smaller than 1024px and support slide-in */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(100%);
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+  }
+  :global(.sidebar-open) .sidebar {
+    transform: translateX(0);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.85);
+  }
+}

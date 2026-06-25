@@ -1,0 +1,111 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroHeader {
+  position: relative;
+  background: linear-gradient(135deg, rgba(20, 22, 28, 0.8) 0%, rgba(11, 12, 14, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.heroHeader::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(218, 145, 39, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.headerContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.badgeVR {
+  background: linear-gradient(135deg, #da9127 0%, #a86c12 100%);
+  color: #fff;
+  font-weight: 850;
+  font-size: 0.75rem;
+  padding: 6px 16px;
+  border-radius: 99px;
+  align-self: flex-start;
+  box-shadow: 0 4px 15px rgba(218, 145, 39, 0.3);
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.description {
+  color: #94a3b8;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 800px;
+}
+
+.globeIcon {
+  font-size: 2.2rem;
+  display: inline-flex;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+@media (max-width: 768px) {
+  .heroHeader {
+    padding: 32px 24px;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .description {
+    font-size: 0.95rem;
+  }
+}

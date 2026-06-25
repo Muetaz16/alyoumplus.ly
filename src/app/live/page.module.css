@@ -1,0 +1,223 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 4%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.titleArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.liveTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.liveCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #ef4444;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Cinema Full-Width Layout */
+.broadcastGrid {
+  display: block;
+  width: 100%;
+}
+
+.playerWrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+  background: #000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.iframeElement {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Glass Live Chat box */
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.chatHeader {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.chatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 380px; /* Constrain height to align with video */
+}
+
+.chatBubble {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: messageSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes messageSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chatUser {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.systemUser {
+  color: var(--text-muted);
+}
+
+.chatText {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 12px 0 12px 12px; /* RTL bubble style */
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 90%;
+  word-break: break-word;
+}
+
+.currentUserBubble .chatText {
+  background: rgba(var(--primary-rgb), 0.12);
+  border-color: rgba(var(--primary-rgb), 0.25);
+  border-radius: 0 12px 12px 12px;
+}
+
+.currentUserBubble .chatUser {
+  color: #f8fafc;
+}
+
+.chatFooter {
+  padding: 16px;
+  border-top: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.chatForm {
+  display: flex;
+  gap: 8px;
+}
+
+.chatInput {
+  flex: 1;
+  background: rgba(10, 12, 17, 0.7);
+  border: 1px solid var(--border);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.chatInput:focus {
+  border-color: var(--primary);
+}
+
+.sendBtn {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.sendBtn:hover {
+  background: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+/* Info Section */
+.infoBox {
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.infoDescription {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .broadcastGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chatMessages {
+    height: 300px;
+  }
+}

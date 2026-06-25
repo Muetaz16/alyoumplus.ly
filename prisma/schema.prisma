@@ -1,0 +1,64 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model AdminUser {
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  password String
+  name     String
+  role     String  @default("EDITOR")
+}
+
+model Category {
+  id     Int     @id @default(autoincrement())
+  name   String
+  slug   String  @unique
+  videos Video[]
+}
+
+model Video {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String?
+  type        String    // "YOUTUBE", "REEL", "LIVE"
+  url         String
+  thumbnail   String?
+  views       Int       @default(0)
+  likes       Int       @default(0)
+  isFeatured  Boolean   @default(false)
+  categoryId  Int?
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  createdAt   DateTime  @default(now())
+}
+
+model ContactSetting {
+  id               Int     @id @default(1)
+  phone            String
+  email            String
+  address          String
+  whatsapp         String
+  telegram         String
+  facebook         String
+  advertisingPlans String
+  exchangeUsd      String?
+  exchangeEur      String?
+  exchangeGbp      String?
+}
+
+model GeneralSetting {
+  id       String @id // "ticker", "poll"
+  items    String // JSON stringified array of strings for ticker
+  question String?
+  option1  String?
+  option2  String?
+  option3  String?
+  votes1   Int?    @default(0)
+  votes2   Int?    @default(0)
+  votes3   Int?    @default(0)
+}

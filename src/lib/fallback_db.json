@@ -1,0 +1,64 @@
+{
+  "adminUsers": [
+    {
+      "id": 99,
+      "email": "motaz@gmail.com",
+      "password": "motaz123"
+    }
+  ],
+  "categories": [],
+  "videos": [
+    {
+      "title": "برشا",
+      "description": "برشا بطل الدوري",
+      "type": "YOUTUBE",
+      "url": "https://www.youtube.com/embed/eUAyaqZ46w4",
+      "thumbnail": "https://img.youtube.com/vi/eUAyaqZ46w4/hqdefault.jpg",
+      "isFeatured": false,
+      "categoryId": null,
+      "id": 3581819,
+      "createdAt": "2026-06-02T17:57:19.660Z",
+      "views": 0,
+      "likes": 0,
+      "category": null
+    },
+    {
+      "title": "برشا ",
+      "description": "برشا بطل الدوري",
+      "type": "YOUTUBE",
+      "url": "https://www.youtube.com/embed/JttPqGGY85E",
+      "thumbnail": "https://img.youtube.com/vi/JttPqGGY85E/hqdefault.jpg",
+      "isFeatured": true,
+      "categoryId": 6735298,
+      "id": 1143244,
+      "createdAt": "2026-06-02T18:03:46.351Z",
+      "views": 0,
+      "likes": 0
+    },
+    {
+      "title": "video",
+      "description": "good video",
+      "type": "YOUTUBE",
+      "url": "https://www.youtube.com/embed/Z6_Cm3NPskw",
+      "thumbnail": "https://img.youtube.com/vi/Z6_Cm3NPskw/hqdefault.jpg",
+      "isFeatured": false,
+      "categoryId": 9211945,
+      "id": 459213,
+      "createdAt": "2026-06-02T18:07:41.701Z",
+      "views": 0,
+      "likes": 0
+    }
+  ],
+  "contactSettings": [
+    {
+      "id": 1,
+      "phone": "+218928175897",
+      "email": "info@libyaplus.ly",
+      "address": "طرابلس، ليبيا",
+      "whatsapp": "218928175897",
+      "telegram": "+218928175897",
+      "facebook": "libyaplus.official",
+      "advertisingPlans": "[]"
+    }
+  ]
+}

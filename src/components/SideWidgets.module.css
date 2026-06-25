@@ -1,0 +1,143 @@
+.widgetsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px 20px 16px;
+  margin-top: 20px;
+}
+
+.widgetCard {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.widgetCard:hover {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(229, 9, 20, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.widgetTitle {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #a3a3a3;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+}
+
+/* Weather Styles */
+.weatherHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.weatherHeader .widgetTitle {
+  margin: 0;
+}
+
+.weatherCity {
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #e3e3e3;
+  font-weight: 600;
+}
+
+.weatherMain {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.weatherTempWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.weatherIcon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.weatherTemp {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.weatherExtra {
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.extraItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* Exchange Rate Styles */
+.ratesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rateRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.rateRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.currencyFlag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.currencyFlag span {
+  font-size: 1.1rem;
+}
+
+.currencyValue {
+  font-weight: 850;
+  font-size: 0.95rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lydSymbol {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-weight: 600;
+}
