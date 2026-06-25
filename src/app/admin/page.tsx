@@ -637,13 +637,13 @@ export default function AdminPage() {
           <div className={styles.shieldIcon}>
             <img src="/logl.png" alt="ليبيا بلس" style={{ height: "65px", objectFit: "contain" }} />
           </div>
-          <h2 style={{ fontSize: "1.4rem", margin: "0", color: "#ffffff", fontWeight: "800" }}>بوابة المشرفين الآمنة</h2>
-          <p style={{ color: "#94a3b8", fontSize: "0.85rem", margin: "0" }}>
+          <h2 style={{ fontSize: "1.4rem", margin: "0", color: "#0f172a", fontWeight: "800" }}>بوابة المشرفين الآمنة</h2>
+          <p style={{ color: "#475569", fontSize: "0.85rem", margin: "0" }}>
             سجل دخولك بالبريد الإلكتروني وكلمة المرور لإدارة منصة ليبيا بلس الرقمية.
           </p>
           <form onSubmit={handleLogin} style={{ width: "100%", display: "flex", flexDirection: "column", gap: "14px" }}>
             <div className="form-group" style={{ margin: 0, textAlign: "right" }}>
-              <label className="form-label" style={{ color: "#cbd5e1" }}>البريد الإلكتروني *</label>
+              <label className="form-label" style={{ color: "#334155", fontWeight: "600" }}>البريد الإلكتروني *</label>
               <input
                 type="email"
                 className="form-control"
@@ -652,11 +652,11 @@ export default function AdminPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 autoComplete="off"
-                style={{ direction: "ltr" }}
+                style={{ direction: "ltr", background: "#f8fafc", color: "#0f172a", border: "1px solid #cbd5e1" }}
               />
             </div>
             <div className="form-group" style={{ margin: 0, textAlign: "right" }}>
-              <label className="form-label" style={{ color: "#cbd5e1" }}>كلمة المرور *</label>
+              <label className="form-label" style={{ color: "#334155", fontWeight: "600" }}>كلمة المرور *</label>
               <input
                 type="password"
                 className="form-control"
@@ -665,7 +665,7 @@ export default function AdminPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 autoComplete="off"
-                style={{ direction: "ltr" }}
+                style={{ direction: "ltr", background: "#f8fafc", color: "#0f172a", border: "1px solid #cbd5e1" }}
               />
             </div>
             {authError && <p style={{ color: "#ef4444", fontSize: "0.825rem", textAlign: "center", margin: 0 }}>{authError}</p>}
