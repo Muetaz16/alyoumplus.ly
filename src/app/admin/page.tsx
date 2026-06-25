@@ -769,7 +769,7 @@ export default function AdminPage() {
 
                   {/* Recent items list */}
                   <div className={styles.panelHeader} style={{ marginTop: "35px", marginBottom: "18px" }}>
-                    <h3 style={{ fontSize: "1.2rem", fontWeight: "800", color: "#ffffff" }}>آخر المحتويات المضافة حديثاً</h3>
+                    <h3 style={{ fontSize: "1.2rem", fontWeight: "800", color: "#0f172a" }}>آخر المحتويات المضافة حديثاً</h3>
                   </div>
 
                   <div className={styles.tableWrapper}>
