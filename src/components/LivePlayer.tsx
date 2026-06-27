@@ -42,9 +42,6 @@ export default function LivePlayer({ initialLiveStream }: LivePlayerProps) {
         <div style={{ textAlign: "center", padding: "80px 20px" }} className="glass-card">
           <span style={{ fontSize: "3rem" }}>📡</span>
           <h2 style={{ marginTop: "20px" }}>لا يوجد بث مباشر مفعل حالياً</h2>
-          <p style={{ color: "var(--text-secondary)", marginTop: "10px" }}>
-            يرجى تفعيل البث المباشر ووسم البث كـ "مميز" في لوحة التحكم لبدء البث!
-          </p>
         </div>
       </div>
     );
