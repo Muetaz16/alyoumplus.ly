@@ -459,7 +459,7 @@ function HomePageContent() {
                 {pollData.question}
               </p>
               <span style={{ fontSize: "0.8rem", color: "#a3a3a3", fontWeight: "750", marginTop: "10px" }}>
-                📊 إجمالي الأصوات المشاركة: {totalVotes.toLocaleString()} صوت
+                إجمالي الأصوات المشاركة: {totalVotes.toLocaleString()} صوت
               </span>
             </div>
 
