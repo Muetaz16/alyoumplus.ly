@@ -454,7 +454,6 @@ function HomePageContent() {
           {/* B. Glassmorphic Interactive Opinion Poll Widget */}
           <section className={styles.pollContainer} style={{ margin: "0 4%" }}>
             <div className={styles.pollInfo}>
-              <span style={{ fontSize: "1.8rem" }}>🗳️</span>
               <h2 className={styles.pollTitle}>استطلاع الرأي التفاعلي</h2>
               <p className={styles.pollSub}>
                 {pollData.question}
