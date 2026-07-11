@@ -14,7 +14,7 @@ export default function Footer() {
     address: "بنغازي- ليبيا",
     whatsapp: "218928175897",
     telegram: "+218928175897",
-    facebook: "libyaplus.official",
+    facebook: "minassaalyawmplus",
   });
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Footer() {
             address: data.address || "بنغازي- ليبيا",
             whatsapp: data.whatsapp || "218928175897",
             telegram: data.telegram || "+218928175897",
-            facebook: data.facebook || "libyaplus.official",
+            facebook: data.facebook || "minassaalyawmplus",
           });
         }
       } catch (err) {
@@ -73,7 +73,7 @@ export default function Footer() {
         {/* Brand Description */}
         <div className={styles.brandColumn}>
           <div className={styles.logoContainer}>
-            <img src="/logl.png" alt="اليوم plus" className={styles.logoImage} />
+            <img src="/LogoPlusPNG.png" alt="اليوم plus" className={styles.logoImage} />
           </div>
           <p className={styles.description}>
             نحن منصة إعلامية بهوية ليبية، انطلقنا لنقدم محتوى مرئياً ومسموعاً يصل إلى كل بيت. من الفيديوهات والتقارير القصيرة والمليئة بالحياة، إلى البث المباشر الموثوق الذي ينقل لكم الحدث لحظة بلحظة. نختار لكم أفضل القصص والمحتوى المميز بجودة عرض مذهلة، لأننا نؤمن أن القصة الليبية تستحق أن تُروى بأفضل صورة.
@@ -100,6 +100,7 @@ export default function Footer() {
             <a href={getSocialLink("wa", settings.whatsapp)} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} title="WhatsApp">WA</a>
             <a href={getSocialLink("tg", settings.telegram)} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} title="Telegram">TG</a>
             <a href={getSocialLink("fb", settings.facebook)} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} title="Facebook">FB</a>
+            <a href="https://www.youtube.com/channel/UCr7asDCppfeAmt9B5ayzpIA" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} title="YouTube" style={{ color: "#ff0000" }}>YT</a>
           </div>
         </div>
       </div>

@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: "اليوم plus | منصة البث المباشر والفيديوهات",
   description: "منصة إعلامية رائدة لمشاهدة فيديوهات الريلز القصيرة، البث المباشر الحصري، وآخر مستجدات المحتوى المرئي والمسموع بدقة عالية.",
   icons: {
-    icon: "/logl.png",
-    apple: "/logl.png",
+    icon: "/LogoPlusPNG.png",
+    apple: "/LogoPlusPNG.png",
   },
 };
 

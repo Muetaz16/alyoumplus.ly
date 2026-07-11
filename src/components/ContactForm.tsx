@@ -130,7 +130,7 @@ export default function ContactForm({ settings }: ContactFormProps) {
               🔵 تيليجرام
             </a>
             <a
-              href={`https://facebook.com/${settings.facebook || "libyaplus.official"}`}
+              href={`https://facebook.com/${settings.facebook || "minassaalyawmplus"}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"

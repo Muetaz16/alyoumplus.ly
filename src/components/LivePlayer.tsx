@@ -94,7 +94,7 @@ export default function LivePlayer({ initialLiveStream }: LivePlayerProps) {
         {/* Cinema Video Player Container */}
         <div className={styles.playerWrapper}>
           <iframe
-            src={`${embedUrl}?autoplay=1&mute=0&rel=0`}
+            src={`${embedUrl}?autoplay=1&mute=0&rel=0&modestbranding=1&showinfo=0`}
             title={liveStream.title}
             className={styles.iframeElement}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

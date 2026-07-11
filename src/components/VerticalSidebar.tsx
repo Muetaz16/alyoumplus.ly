@@ -44,7 +44,7 @@ export default function VerticalSidebar() {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       ),
-      active: pathname === "/" && !activeCategorySlug,
+      active: (pathname === "/" || pathname === "") && !activeCategorySlug,
     },
     {
       name: "المباشر",
@@ -52,7 +52,7 @@ export default function VerticalSidebar() {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 19-2 3h4Z"/><path d="M8 21h8"/><path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
       ),
-      active: pathname === "/live",
+      active: pathname === "/live" || pathname === "/live/",
     },
     {
       name: "فيديوهات الريلز",
@@ -60,7 +60,7 @@ export default function VerticalSidebar() {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
       ),
-      active: pathname === "/reels",
+      active: pathname === "/reels" || pathname === "/reels/",
     },
     {
       name: "فيديوهات 360",
@@ -68,7 +68,7 @@ export default function VerticalSidebar() {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
       ),
-      active: pathname === "/vr360",
+      active: pathname === "/vr360" || pathname === "/vr360/",
     },
   ];
 
@@ -77,7 +77,7 @@ export default function VerticalSidebar() {
       {/* Brand Header */}
       <div className={styles.brandContainer}>
         <Link href="/" prefetch={false} className={styles.logoLink}>
-          <img src="/logl.png" alt="اليوم plus" className={styles.logoImage} />
+          <img src="/LogoPlusPNG.png" alt="اليوم plus" className={styles.logoImage} />
           <span className={styles.logoText}>اليوم plus</span>
         </Link>
       </div>

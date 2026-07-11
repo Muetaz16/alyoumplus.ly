@@ -107,13 +107,13 @@
 
 .active {
   color: #ffffff !important;
-  background: linear-gradient(135deg, var(--primary) 0%, #b80710 100%) !important;
-  box-shadow: 0 6px 16px rgba(229, 9, 20, 0.35);
+  background: linear-gradient(135deg, var(--primary) 0%, #004885 100%) !important;
+  box-shadow: 0 6px 16px rgba(0, 114, 203, 0.35);
   border-right-color: transparent !important;
 }
 
 .active:hover {
-  background: linear-gradient(135deg, var(--primary) 0%, #b80710 100%) !important;
+  background: linear-gradient(135deg, var(--primary) 0%, #004885 100%) !important;
   border-right-color: transparent !important;
 }
 

@@ -43,7 +43,7 @@ export default function VideoModal({ video, onClose }: VideoModalProps) {
     }
 
     if (url.includes("embed/")) {
-      return `${url}?autoplay=1&rel=0`;
+      return `${url}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
     }
     
     let videoId = "";
@@ -60,7 +60,7 @@ export default function VideoModal({ video, onClose }: VideoModalProps) {
     }
 
     if (videoId) {
-      return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
     }
     return url;
   };

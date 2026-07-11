@@ -6,9 +6,9 @@
   --bg-card: rgba(20, 22, 28, 0.85);
   --bg-card-hover: rgba(30, 33, 42, 0.95);
   
-  --primary-rgb: 229, 9, 20; /* Vibrant Red (#e50914) */
+  --primary-rgb: 0, 114, 203; /* Libya Plus Blue (#0072cb) */
   --primary: rgb(var(--primary-rgb));
-  --primary-hover: #b80710;
+  --primary-hover: #00569e;
   --primary-glow: rgba(var(--primary-rgb), 0.25);
   
   --secondary: #1f2229;

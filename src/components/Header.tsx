@@ -77,7 +77,7 @@ export default function Header() {
 
           {/* Brand logo (visible on mobile only since desktop has it in the sidebar) */}
           <Link href="/" prefetch={false} className={styles.logoAreaMobile}>
-            <img src="/logl.png" alt="اليوم plus" className={styles.logoImage} />
+            <img src="/LogoPlusPNG.png" alt="اليوم plus" className={styles.logoImage} />
             <span className={styles.logoText}>اليوم plus</span>
           </Link>
         </div>

@@ -635,7 +635,7 @@ export default function AdminPage() {
       <div className={styles.lockScreenContainer}>
         <div className={styles.lockCard}>
           <div className={styles.shieldIcon}>
-            <img src="/logl.png" alt="ليبيا بلس" style={{ height: "65px", objectFit: "contain" }} />
+            <img src="/LogoPlusPNG.png" alt="ليبيا بلس" style={{ height: "65px", objectFit: "contain" }} />
           </div>
           <h2 style={{ fontSize: "1.4rem", margin: "0", color: "#0f172a", fontWeight: "800" }}>بوابة المشرفين الآمنة</h2>
           <p style={{ color: "#475569", fontSize: "0.85rem", margin: "0" }}>
@@ -646,7 +646,7 @@ export default function AdminPage() {
               <label className="form-label" style={{ color: "#334155", fontWeight: "600" }}>البريد الإلكتروني *</label>
               <input
                 type="email"
-                className="form-control"
+                className={styles.formControl}
                 placeholder="example@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -659,7 +659,7 @@ export default function AdminPage() {
               <label className="form-label" style={{ color: "#334155", fontWeight: "600" }}>كلمة المرور *</label>
               <input
                 type="password"
-                className="form-control"
+                className={styles.formControl}
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -684,8 +684,8 @@ export default function AdminPage() {
       {/* 1. Header Topbar */}
       <header className={styles.topBar}>
         <div className={styles.brandText}>
-          <img src="/logl.png" alt="ليبيا بلس" style={{ height: "38px", objectFit: "contain" }} />
-          <span style={{ fontSize: "1.05rem", fontWeight: "850", color: "#ffffff" }}>لوحة التحكم الذكية</span>
+          <img src="/LogoPlusPNG.png" alt="ليبيا بلس" style={{ height: "38px", objectFit: "contain" }} />
+          <span style={{ fontSize: "1.05rem", fontWeight: "850", color: "#0f172a" }}>لوحة التحكم الذكية</span>
         </div>
         <div style={{ display: "flex", gap: "12px" }}>
           <Link href="/" prefetch={false} className="btn btn-secondary" style={{ fontSize: "0.85rem", padding: "8px 16px" }}>
@@ -790,7 +790,7 @@ export default function AdminPage() {
                             <td>
                               <img src={video.thumbnail || "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=100"} className={styles.avatar} alt="" />
                             </td>
-                            <td style={{ fontWeight: "650", color: "#ffffff" }}>{video.title}</td>
+                            <td style={{ fontWeight: "650", color: "#0f172a" }}>{video.title}</td>
                             <td>
                               <span className={`${styles.rowBadge} ${video.type === "REEL" ? styles.badgeReel : video.type === "LIVE" ? styles.badgeLive : video.type === "VR360" ? styles.badgeReel : styles.badgeYoutube}`}>
                                 {video.type === "REEL" ? "ريلز" : video.type === "LIVE" ? "لايف مباشر" : video.type === "VR360" ? "360 درجة" : "أخبار"}
@@ -817,7 +817,7 @@ export default function AdminPage() {
                     <p className={styles.panelSubtitle}>تحرير رابط يوتيوب المباشر ووسم البث النشط على المنصة.</p>
                   </div>
 
-                  <div style={{ padding: "35px", display: "flex", flexDirection: "column", gap: "24px", maxWidth: "800px", margin: "0 auto", background: "rgba(17, 19, 28, 0.85)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "24px", boxShadow: "0 4px 20px rgba(0,0,0,0.25)" }}>
+                  <div style={{ padding: "35px", display: "flex", flexDirection: "column", gap: "24px", maxWidth: "800px", margin: "0 auto", background: "rgba(255, 255, 255, 0.95)", border: "1px solid rgba(0, 0, 0, 0.06)", borderRadius: "24px", boxShadow: "0 4px 20px rgba(0,0,0,0.25)" }}>
 
                     {/* Live Broadcast Status Banner */}
                     <div style={{
@@ -835,10 +835,10 @@ export default function AdminPage() {
                           {liveIsFeatured ? "🔴" : "⚫"}
                         </span>
                         <div>
-                          <h4 style={{ margin: 0, fontSize: "1.1rem", color: "#ffffff", fontWeight: "800" }}>
+                          <h4 style={{ margin: 0, fontSize: "1.1rem", color: "#0f172a", fontWeight: "800" }}>
                             {liveIsFeatured ? "البث المباشر نشط الآن" : "البث المباشر متوقف حالياً"}
                           </h4>
-                          <p style={{ margin: "4px 0 0 0", fontSize: "0.85rem", color: "#94a3b8", fontWeight: "500" }}>
+                          <p style={{ margin: "4px 0 0 0", fontSize: "0.85rem", color: "#475569", fontWeight: "500" }}>
                             {liveIsFeatured ? "يظهر البث المباشر للزوار في شريط البانر بالصفحة الرئيسية وصفحة البث المخصص." : "يظهر للزوار لوحة الانتظار والترقب بالبث التجريبي."}
                           </p>
                         </div>
@@ -848,7 +848,7 @@ export default function AdminPage() {
                           type="button"
                           onClick={() => setLiveIsFeatured(true)}
                           className="btn"
-                          style={{ fontSize: "0.85rem", padding: "8px 16px", background: liveIsFeatured ? "#da9127" : "rgba(255,255,255,0.05)", color: liveIsFeatured ? "#fff" : "#94a3b8", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "10px" }}
+                          style={{ fontSize: "0.85rem", padding: "8px 16px", background: liveIsFeatured ? "#da9127" : "rgba(0, 0, 0, 0.05)", color: liveIsFeatured ? "#fff" : "#94a3b8", border: "1px solid rgba(0, 0, 0, 0.08)", borderRadius: "10px" }}
                         >
                           ▶ تشغيل البث
                         </button>
@@ -856,7 +856,7 @@ export default function AdminPage() {
                           type="button"
                           onClick={() => setLiveIsFeatured(false)}
                           className="btn"
-                          style={{ fontSize: "0.85rem", padding: "8px 16px", background: !liveIsFeatured ? "#ef4444" : "rgba(255,255,255,0.05)", color: !liveIsFeatured ? "#fff" : "#94a3b8", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "10px" }}
+                          style={{ fontSize: "0.85rem", padding: "8px 16px", background: !liveIsFeatured ? "#ef4444" : "rgba(0, 0, 0, 0.05)", color: !liveIsFeatured ? "#fff" : "#94a3b8", border: "1px solid rgba(0, 0, 0, 0.08)", borderRadius: "10px" }}
                         >
                           ⏸ إيقاف البث
                         </button>
@@ -871,7 +871,7 @@ export default function AdminPage() {
                         </label>
                         <input
                           type="url"
-                          className="form-control"
+                          className={styles.formControl}
                           required
                           value={liveUrl}
                           onChange={(e) => setLiveUrl(e.target.value)}
@@ -889,7 +889,7 @@ export default function AdminPage() {
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className={styles.formControl}
                           value={liveTitle}
                           onChange={(e) => setLiveTitle(e.target.value)}
                           placeholder="مثال: البث المباشر لقناة ليبيا بلس - تغطية شاملة"
@@ -902,7 +902,7 @@ export default function AdminPage() {
                           وصف البث والتغطية
                         </label>
                         <textarea
-                          className="form-control"
+                          className={styles.formControl}
                           rows={4}
                           value={liveDescription}
                           onChange={(e) => setLiveDescription(e.target.value)}
@@ -1112,7 +1112,7 @@ export default function AdminPage() {
                         {categories.map((cat) => (
                           <tr key={cat.id}>
                             <td>{cat.id}</td>
-                            <td style={{ fontWeight: "650", color: "#ffffff" }}>{cat.name}</td>
+                            <td style={{ fontWeight: "650", color: "#0f172a" }}>{cat.name}</td>
                             <td style={{ direction: "ltr", textAlign: "right" }}>{cat.slug}</td>
                             <td>
                               {videos.filter((v) => v.categoryId === cat.id).length} فيديو
@@ -1143,7 +1143,7 @@ export default function AdminPage() {
                     <p className={styles.panelSubtitle}>تغيير خطوط الدعم الفني، روابط التواصل، وتعريف باقات إعلانات ليبيا بلس.</p>
                   </div>
 
-                  <div style={{ padding: "35px", background: "rgba(17, 19, 28, 0.85)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "24px", maxWidth: "800px", margin: "0 auto", boxShadow: "0 4px 20px rgba(0,0,0,0.25)" }}>
+                  <div style={{ padding: "35px", background: "rgba(255, 255, 255, 0.95)", border: "1px solid rgba(0, 0, 0, 0.06)", borderRadius: "24px", maxWidth: "800px", margin: "0 auto", boxShadow: "0 4px 20px rgba(0,0,0,0.25)" }}>
                     <form onSubmit={handleSaveSettings} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
 
                       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
@@ -1151,7 +1151,7 @@ export default function AdminPage() {
                           <label className="form-label">📞 رقم الهاتف *</label>
                           <input
                             type="text"
-                            className="form-control"
+                            className={styles.formControl}
                             value={settingsForm.phone}
                             onChange={(e) => setSettingsForm({ ...settingsForm, phone: e.target.value })}
                             required
@@ -1162,7 +1162,7 @@ export default function AdminPage() {
                           <label className="form-label">✉️ البريد الإلكتروني للمنصة *</label>
                           <input
                             type="email"
-                            className="form-control"
+                            className={styles.formControl}
                             value={settingsForm.email}
                             onChange={(e) => setSettingsForm({ ...settingsForm, email: e.target.value })}
                             required
@@ -1175,7 +1175,7 @@ export default function AdminPage() {
                         <label className="form-label">📍 العنوان الفعلي للمقر</label>
                         <input
                           type="text"
-                          className="form-control"
+                          className={styles.formControl}
                           value={settingsForm.address}
                           onChange={(e) => setSettingsForm({ ...settingsForm, address: e.target.value })}
                         />
@@ -1186,7 +1186,7 @@ export default function AdminPage() {
                           <label className="form-label">💬 معرف واتساب</label>
                           <input
                             type="text"
-                            className="form-control"
+                            className={styles.formControl}
                             placeholder="مثل: 218928175897"
                             value={settingsForm.whatsapp}
                             onChange={(e) => setSettingsForm({ ...settingsForm, whatsapp: e.target.value })}
@@ -1197,7 +1197,7 @@ export default function AdminPage() {
                           <label className="form-label">✈️ معرف تلغرام</label>
                           <input
                             type="text"
-                            className="form-control"
+                            className={styles.formControl}
                             placeholder="مثل: libyaplus_ad"
                             value={settingsForm.telegram}
                             onChange={(e) => setSettingsForm({ ...settingsForm, telegram: e.target.value })}
@@ -1208,7 +1208,7 @@ export default function AdminPage() {
                           <label className="form-label">👤 معرف فيسبوك</label>
                           <input
                             type="text"
-                            className="form-control"
+                            className={styles.formControl}
                             placeholder="مثل: libyaplus.official"
                             value={settingsForm.facebook}
                             onChange={(e) => setSettingsForm({ ...settingsForm, facebook: e.target.value })}
@@ -1223,7 +1223,7 @@ export default function AdminPage() {
                             <label className="form-label">🇺🇸 الدولار (USD)</label>
                             <input
                               type="text"
-                              className="form-control"
+                              className={styles.formControl}
                               placeholder="مثل: 7.15"
                               value={settingsForm.exchangeUsd || ""}
                               onChange={(e) => setSettingsForm({ ...settingsForm, exchangeUsd: e.target.value })}
@@ -1234,7 +1234,7 @@ export default function AdminPage() {
                             <label className="form-label">🇪🇺 اليورو (EUR)</label>
                             <input
                               type="text"
-                              className="form-control"
+                              className={styles.formControl}
                               placeholder="مثل: 7.75"
                               value={settingsForm.exchangeEur || ""}
                               onChange={(e) => setSettingsForm({ ...settingsForm, exchangeEur: e.target.value })}
@@ -1245,7 +1245,7 @@ export default function AdminPage() {
                             <label className="form-label">🇬🇧 الباوند (GBP)</label>
                             <input
                               type="text"
-                              className="form-control"
+                              className={styles.formControl}
                               placeholder="مثل: 9.05"
                               value={settingsForm.exchangeGbp || ""}
                               onChange={(e) => setSettingsForm({ ...settingsForm, exchangeGbp: e.target.value })}
@@ -1278,17 +1278,17 @@ export default function AdminPage() {
                   <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "30px", maxWidth: "850px", margin: "0 auto" }}>
 
                     {/* news ticker section */}
-                    <div style={{ padding: "30px", background: "rgba(17, 19, 28, 0.85)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "24px", boxShadow: "0 4px 20px rgba(0,0,0,0.25)" }}>
+                    <div style={{ padding: "30px", background: "rgba(255, 255, 255, 0.95)", border: "1px solid rgba(0, 0, 0, 0.06)", borderRadius: "24px", boxShadow: "0 4px 20px rgba(0,0,0,0.25)" }}>
                       <form onSubmit={handleSaveInteractiveWidgets} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
 
-                        <h3 style={{ fontSize: "1.15rem", fontWeight: "800", color: "#ffffff", margin: 0, borderBottom: "1px solid rgba(255,255,255,0.04)", paddingBottom: "12px" }}>
+                        <h3 style={{ fontSize: "1.15rem", fontWeight: "800", color: "#0f172a", margin: 0, borderBottom: "1px solid rgba(0, 0, 0, 0.04)", paddingBottom: "12px" }}>
                           🔴 إدارة شريط الأخبار العاجلة المتحرك
                         </h3>
 
                         <div className="form-group">
                           <label className="form-label" style={{ fontWeight: "700" }}>محتوى الأخبار العاجلة (كل سطر يمثل خبراً مستقلاً) *</label>
                           <textarea
-                            className="form-control"
+                            className={styles.formControl}
                             rows={5}
                             required
                             value={tickerTextarea}
@@ -1301,7 +1301,7 @@ export default function AdminPage() {
                           </span>
                         </div>
 
-                        <h3 style={{ fontSize: "1.15rem", fontWeight: "800", color: "#ffffff", margin: "15px 0 0 0", borderBottom: "1px solid rgba(255,255,255,0.04)", paddingBottom: "12px" }}>
+                        <h3 style={{ fontSize: "1.15rem", fontWeight: "800", color: "#0f172a", margin: "15px 0 0 0", borderBottom: "1px solid rgba(0, 0, 0, 0.04)", paddingBottom: "12px" }}>
                           🗳️ إدارة استطلاع الرأي التفاعلي
                         </h3>
 
@@ -1309,7 +1309,7 @@ export default function AdminPage() {
                           <label className="form-label" style={{ fontWeight: "700" }}>سؤال الاستطلاع النشط *</label>
                           <input
                             type="text"
-                            className="form-control"
+                            className={styles.formControl}
                             required
                             value={pollQuestion}
                             onChange={(e) => setPollQuestion(e.target.value)}
@@ -1322,7 +1322,7 @@ export default function AdminPage() {
                             <label className="form-label" style={{ fontWeight: "700" }}>الخيار الأول *</label>
                             <input
                               type="text"
-                              className="form-control"
+                              className={styles.formControl}
                               required
                               value={pollOption1}
                               onChange={(e) => setPollOption1(e.target.value)}
@@ -1333,7 +1333,7 @@ export default function AdminPage() {
                             <label className="form-label" style={{ fontWeight: "700" }}>أصوات الخيار الأول</label>
                             <input
                               type="number"
-                              className="form-control"
+                              className={styles.formControl}
                               required
                               value={pollVotes1}
                               onChange={(e) => setPollVotes1(Number(e.target.value) || 0)}
@@ -1347,7 +1347,7 @@ export default function AdminPage() {
                             <label className="form-label" style={{ fontWeight: "700" }}>الخيار الثاني *</label>
                             <input
                               type="text"
-                              className="form-control"
+                              className={styles.formControl}
                               required
                               value={pollOption2}
                               onChange={(e) => setPollOption2(e.target.value)}
@@ -1358,7 +1358,7 @@ export default function AdminPage() {
                             <label className="form-label" style={{ fontWeight: "700" }}>أصوات الخيار الثاني</label>
                             <input
                               type="number"
-                              className="form-control"
+                              className={styles.formControl}
                               required
                               value={pollVotes2}
                               onChange={(e) => setPollVotes2(Number(e.target.value) || 0)}
@@ -1372,7 +1372,7 @@ export default function AdminPage() {
                             <label className="form-label" style={{ fontWeight: "700" }}>الخيار الثالث *</label>
                             <input
                               type="text"
-                              className="form-control"
+                              className={styles.formControl}
                               required
                               value={pollOption3}
                               onChange={(e) => setPollOption3(e.target.value)}
@@ -1383,7 +1383,7 @@ export default function AdminPage() {
                             <label className="form-label" style={{ fontWeight: "700" }}>أصوات الخيار الثالث</label>
                             <input
                               type="number"
-                              className="form-control"
+                              className={styles.formControl}
                               required
                               value={pollVotes3}
                               onChange={(e) => setPollVotes3(Number(e.target.value) || 0)}
@@ -1454,7 +1454,7 @@ export default function AdminPage() {
                       <tbody>
                         {adminUsers.map((u: any) => (
                           <tr key={u.id}>
-                            <td style={{ fontWeight: "700", color: "#ffffff" }}>{u.name || "عضو تحرير"}</td>
+                            <td style={{ fontWeight: "700", color: "#0f172a" }}>{u.name || "عضو تحرير"}</td>
                             <td style={{ direction: "ltr", textAlign: "right" }}>{u.email}</td>
                             <td style={{ fontFamily: "monospace" }}>{u.password}</td>
                             <td>
@@ -1498,7 +1498,7 @@ export default function AdminPage() {
 
           {/* Sidebar Top Brand Header */}
           <div className={styles.sidebarBrand}>
-            <img src="/logl.png" className={styles.sidebarLogo} alt="ليبيا بلس" />
+            <img src="/LogoPlusPNG.png" className={styles.sidebarLogo} alt="ليبيا بلس" />
             <h3 className={styles.sidebarTitle}> ليبيا بلس</h3>
             <span className={styles.sidebarSubtitle}>إدارة المحتوى الرقمي</span>
           </div>
@@ -1615,7 +1615,7 @@ export default function AdminPage() {
                 <div className="form-group">
                   <label className="form-label" style={{ fontWeight: "700" }}>نوع الفيديو *</label>
                   <select
-                    className="form-control"
+                    className={styles.formControl}
                     value={videoForm.type}
                     onChange={(e) => setVideoForm({ ...videoForm, type: e.target.value })}
                     required
@@ -1632,7 +1632,7 @@ export default function AdminPage() {
                   <div className="form-group">
                     <label className="form-label" style={{ fontWeight: "700" }}>القسم الملحق</label>
                     <select
-                      className="form-control"
+                      className={styles.formControl}
                       value={videoForm.categoryId}
                       onChange={(e) => setVideoForm({ ...videoForm, categoryId: e.target.value })}
                       style={{ padding: "10px", borderRadius: "10px" }}
@@ -1652,7 +1652,7 @@ export default function AdminPage() {
                 <label className="form-label" style={{ fontWeight: "700" }}>عنوان الفيديو *</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={styles.formControl}
                   required
                   value={videoForm.title}
                   onChange={(e) => setVideoForm({ ...videoForm, title: e.target.value })}
@@ -1664,7 +1664,7 @@ export default function AdminPage() {
               <div className="form-group">
                 <label className="form-label" style={{ fontWeight: "700" }}>الوصف / التفاصيل</label>
                 <textarea
-                  className="form-control"
+                  className={styles.formControl}
                   rows={3}
                   value={videoForm.description}
                   onChange={(e) => setVideoForm({ ...videoForm, description: e.target.value })}
@@ -1677,7 +1677,7 @@ export default function AdminPage() {
                 <label className="form-label" style={{ fontWeight: "700" }}>رابط الفيديو (URL) *</label>
                 <input
                   type="url"
-                  className="form-control"
+                  className={styles.formControl}
                   required
                   value={videoForm.url}
                   onChange={(e) => setVideoForm({ ...videoForm, url: e.target.value })}
@@ -1688,7 +1688,7 @@ export default function AdminPage() {
 
 
 
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "8px", background: "rgba(255,255,255,0.02)", padding: "14px", borderRadius: "14px", border: "1px dashed rgba(255,255,255,0.08)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "8px", background: "rgba(0, 0, 0, 0.02)", padding: "14px", borderRadius: "14px", border: "1px dashed rgba(0, 0, 0, 0.08)" }}>
                 <input
                   type="checkbox"
                   id="isFeaturedCheck"
@@ -1696,7 +1696,7 @@ export default function AdminPage() {
                   onChange={(e) => setVideoForm({ ...videoForm, isFeatured: e.target.checked })}
                   style={{ width: "20px", height: "20px", accentColor: "#da9127", cursor: "pointer" }}
                 />
-                <label htmlFor="isFeaturedCheck" className="form-label" style={{ marginBottom: 0, cursor: "pointer", fontWeight: "700", color: "#e2e8f0" }}>
+                <label htmlFor="isFeaturedCheck" className="form-label" style={{ marginBottom: 0, cursor: "pointer", fontWeight: "700", color: "#334155" }}>
                   ⭐ تثبيت وتحديد كبث/فيديو مميز في الصفحة الرئيسية
                 </label>
               </div>
@@ -1732,7 +1732,7 @@ export default function AdminPage() {
                 <label className="form-label" style={{ fontWeight: "700" }}>اسم القسم (بالعربية) *</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={styles.formControl}
                   required
                   value={categoryForm.name}
                   onChange={(e) => setCategoryForm({ ...categoryForm, name: e.target.value })}
@@ -1745,7 +1745,7 @@ export default function AdminPage() {
                 <label className="form-label" style={{ fontWeight: "700" }}>اسم الوسم المعرف الفريد (Slug - بالإنجليزية)</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={styles.formControl}
                   value={categoryForm.slug}
                   onChange={(e) => setCategoryForm({ ...categoryForm, slug: e.target.value })}
                   placeholder="مثال: sports"
@@ -1784,7 +1784,7 @@ export default function AdminPage() {
                 <label className="form-label" style={{ fontWeight: "700" }}>الاسم الكامل للمستخدم *</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={styles.formControl}
                   required
                   value={userForm.name}
                   onChange={(e) => setUserForm({ ...userForm, name: e.target.value })}
@@ -1797,7 +1797,7 @@ export default function AdminPage() {
                 <label className="form-label" style={{ fontWeight: "700" }}>البريد الإلكتروني (اسم المستخدم) *</label>
                 <input
                   type="email"
-                  className="form-control"
+                  className={styles.formControl}
                   required
                   value={userForm.email}
                   onChange={(e) => setUserForm({ ...userForm, email: e.target.value })}
@@ -1810,7 +1810,7 @@ export default function AdminPage() {
                 <label className="form-label" style={{ fontWeight: "700" }}>كلمة المرور للدخول *</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={styles.formControl}
                   required
                   value={userForm.password}
                   onChange={(e) => setUserForm({ ...userForm, password: e.target.value })}
@@ -1822,7 +1822,7 @@ export default function AdminPage() {
               <div className="form-group">
                 <label className="form-label" style={{ fontWeight: "700" }}>الصلاحية والوظيفة في المنصة *</label>
                 <select
-                  className="form-control"
+                  className={styles.formControl}
                   value={userForm.role}
                   onChange={(e) => setUserForm({ ...userForm, role: e.target.value })}
                   style={{ padding: "10px", borderRadius: "10px" }}
