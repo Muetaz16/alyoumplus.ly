@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: alyoum-plus-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: alyoumplus
+      POSTGRES_PASSWORD: alyoumplus123
+      POSTGRES_DB: alyoumplus
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: alyoum-plus-web
+    restart: unless-stopped
+    ports:
+      - "3006:3000"
+    environment:
+      - DATABASE_URL=postgresql://alyoumplus:alyoumplus123@postgres:5432/alyoumplus?schema=public
+    depends_on:
+      - postgres
+    command: sh -c "npx prisma@5.22.0 db push && node server.js"
+
+volumes:
+  postgres_data:
