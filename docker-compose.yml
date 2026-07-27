@@ -25,7 +25,7 @@ services:
     depends_on:
       - postgres
     # Run prisma generate and push before starting the app to ensure DB schema is ready
-    command: sh -c "npx prisma db push && node server.js"
+    command: sh -c "npx prisma@6 db push && node server.js"
 
 volumes:
   postgres_data:
