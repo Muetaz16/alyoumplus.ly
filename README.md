@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ليبيا بلس | Libya Plus
 
-## Getting Started
+منصة إعلامية عربية احترافية للفيديو والبث المباشر — مبنية بـ Next.js 15، Prisma، PostgreSQL.
 
-First, run the development server:
+## التقنيات
+
+- **Frontend:** Next.js 15 (App Router), TypeScript, Tailwind CSS, shadcn/ui, Framer Motion
+- **Backend:** Server Actions, API Routes, Prisma ORM
+- **Database:** PostgreSQL
+- **Auth:** NextAuth v5 (Admin / Editor)
+- **Player:** Video.js + HLS.js
+
+## البدء السريع
+
+### 1. المتطلبات
+
+- Node.js 20+
+- Docker (لقاعدة PostgreSQL)
+
+### 2. التثبيت
+
+```bash
+npm install
+```
+
+### 3. قاعدة البيانات
+
+**التطوير المحلي (SQLite — افتراضي):**
+
+```bash
+npm run db:push
+npm run db:seed
+```
+
+يُنشئ ملف `prisma/dev.db` تلقائياً — لا حاجة لـ Docker.
+
+**الإنتاج (PostgreSQL):**
+
+1. غيّر `provider` في `prisma/schema.prisma` إلى `postgresql`
+2. غيّر `tags` إلى `String[]` إن رغبت بمصفوفات Postgres
+3. عيّن `DATABASE_URL` في `.env` ثم شغّل `docker compose up -d` و `npm run db:push && npm run db:seed`
+
+### 4. التشغيل
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+افتح [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## لوحة التحكم
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+الرابط: [http://localhost:3000/admin](http://localhost:3000/admin)
 
-## Learn More
+| الدور | البريد | كلمة المرور |
+|-------|--------|-------------|
+| Admin | admin@libyaplus.ly | admin123 |
+| Editor | editor@libyaplus.ly | editor123 |
 
-To learn more about Next.js, take a look at the following resources:
+## هيكل المشروع
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/              # صفحات Next.js (عامة + admin)
+├── components/       # مكونات UI والصفحات
+├── lib/              # prisma, auth, data, validations
+└── actions/          # Server Actions للإدارة
+prisma/
+├── schema.prisma     # نموذج قاعدة البيانات
+└── seed.ts           # بيانات تجريبية
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## الصفحات الرئيسية
 
-## Deploy on Vercel
+| المسار | الوصف |
+|--------|-------|
+| `/` | الصفحة الرئيسية |
+| `/videos` | جميع الفيديوهات |
+| `/videos/[slug]` | صفحة الفيديو |
+| `/channels` | القنوات |
+| `/channel/[slug]` | صفحة القناة |
+| `/live` | البث المباشر |
+| `/programs` | البرامج |
+| `/admin` | لوحة التحكم |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## متغيرات البيئة
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+انسخ `.env.example` إلى `.env`:
+
+```env
+DATABASE_URL="postgresql://libyaplus:libyaplus123@localhost:5432/libyaplus?schema=public"
+AUTH_SECRET="your-secret-key"
+NEXTAUTH_URL="http://localhost:3000"
+```
+
+## الإنتاج
+
+```bash
+npm run build
+npm start
+```
+
+## الهوية البصرية
+
+- اللون الرئيسي: `#C1121F`
+- اللون الثانوي: `#780000`
+- لون التمييز: `#E5383B`
+- الخطوط: Cairo, IBM Plex Sans Arabic
+- الاتجاه: RTL كامل
+
+---
+
+© 2026 ليبيا بلس — جميع الحقوق محفوظة

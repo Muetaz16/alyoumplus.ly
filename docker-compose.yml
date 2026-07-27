@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: libya-plus-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: libyaplus
+      POSTGRES_PASSWORD: libyaplus123
+      POSTGRES_DB: libyaplus
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: libya-plus-web
+    restart: unless-stopped
+    ports:
+      - "3005:3000"
+    environment:
+      - DATABASE_URL=postgresql://libyaplus:libyaplus123@postgres:5432/libyaplus?schema=public
+      - NEXTAUTH_URL=http://localhost:3005
+      - AUTH_SECRET=my-super-secret-production-auth-key-change-me
+    depends_on:
+      - postgres
+    # Run prisma generate and push before starting the app to ensure DB schema is ready
+    command: sh -c "npx prisma db push && node server.js"
+
+volumes:
+  postgres_data:
